@@ -12,15 +12,13 @@ services:
             - redis
         networks:
             - laravel
-        expose:
-            - "9000"
 
     # nginx
     nginx:
         image: nginx:alpine
         restart: unless-stopped
         ports:
-            - "8080:80"
+            - "80:80"
         volumes:
             - ./:/var/www
             - ./docker/nginx/:/etc/nginx/conf.d/
